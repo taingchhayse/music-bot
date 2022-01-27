@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "discord.js music bot w/mongoDB",
   "main": "index.js",
-   "engines": {
+  "engines": {
     "node": "16.x"
   },
   "scripts": {
@@ -44,6 +44,7 @@
     "pretty-ms": "^7.0.1",
     "seconds-formater": "^1.2.0",
     "utf-8-validate": "^5.0.7",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+    "ytdl-core": "^4.10.0"
   }
 }
