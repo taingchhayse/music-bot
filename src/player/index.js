@@ -11,13 +11,11 @@ async function player(client) {
 
   let player = client.player;
   client.play = play;
-
   const evtFile = await sync(resolve("./src/player/events/*.js"));
   evtFile.forEach((filepath) => {
     const File = require(filepath);
     if (!(File.prototype instanceof Event)) return;
     const event = new File();
-
     player.on(event.name, (...args) => event.exec(...args, client));
   });
 
@@ -28,6 +26,16 @@ async function player(client) {
       }`,
       { tag: "Player" }
     );
+  });
+  client.on("messageCreate", async (message) => {
+    if (message.author.bot || !message.guild) return;
+    let filterMsg = message.content.split(" ");
+    let prefix = filterMsg[0];
+    let song = message.content.substring(message.content.indexOf(" ") + 1);
+    let data;
+    if (prefix === "-p" || prefix === "-=") {
+      play(client, message, data, song);
+    }
   });
 }
 
