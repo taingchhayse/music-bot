@@ -8,10 +8,8 @@ module.exports = class QueueDestroyed extends Event {
   async exec(queue, client) {
     let channel = queue.textChannel;
 
-    if(channel) {
-      channel.send(
-          `${client.emotes.get("queue")} Queue ended!`
-      );
+    if (channel) {
+      channel.send(`${client.emotes.get("ganyusearch")} Queue ended!`);
     }
   }
 };

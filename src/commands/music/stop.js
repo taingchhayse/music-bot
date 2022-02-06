@@ -58,7 +58,9 @@ module.exports = class Stop extends Interaction {
     queue.stop();
 
     return int.reply({
-      content: `${this.client.emotes.get("stop")} Stopped the music player!`,
+      content: `${this.client.emotes.get(
+        "paimonpad"
+      )} Stopped the music player!`,
       ephemeral: true,
     });
   }

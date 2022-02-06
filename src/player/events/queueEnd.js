@@ -9,10 +9,8 @@ module.exports = class QueueEnd extends Event {
     let channel = queue.textChannel;
 
     queue.skipVotes = [];
-    if(channel) {
-      channel.send(
-          `${client.emotes.get("queue")} Queue ended!`
-      );
+    if (channel) {
+      channel.send(`${client.emotes.get("ganyusearch")} Queue ended!`);
     }
   }
 };
