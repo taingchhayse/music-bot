@@ -45,6 +45,6 @@
     "seconds-formater": "^1.2.0",
     "utf-8-validate": "^5.0.7",
     "util": "^0.12.4",
-    "ytdl-core": "^4.10.0"
+    "ytdl-core": "^4.11.0"
   }
 }
