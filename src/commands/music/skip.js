@@ -42,42 +42,12 @@ module.exports = class Skip extends Interaction {
         ephemeral: true,
       });
 
-    let isDJ = data.djRoles.some((r) => int.member._roles.includes(r));
-    let members = channel.members.filter((m) => !m.user.bot);
+    queue.skipVotes = [];
+    let skipped = queue.skip();
 
-    if (members.size > 1 && !isDJ && !int.member.permissions.has("MANAGE_GUILD")) {
-      let required = members.size === 2 ? 2 : Math.ceil(members.size / 2);
-
-      if (queue.skipVotes.includes(int.user.id)) {
-        return int.reply({
-          content: "You've already voted to skip the current track!",
-          ephemeral: true,
-        });
-      }
-
-      queue.skipVotes.push(int.user.id);
-      int.reply({
-        content: `You voted to skip the current track! **${queue.skipVotes.length}/${required}**`,
-      });
-
-      if (queue.skipVotes.length >= required) {
-        queue.skipVotes = [];
-        let skipped = queue.skip();
-
-        int.channel.send(
-          `${this.client.emotes.get("skip")} Skipped **${skipped.name}**!`
-        );
-      }
-    } else {
-      queue.skipVotes = [];
-      let skipped = queue.skip();
-
-      int.reply({
-        content: `${this.client.emotes.get("skip")} Skipped **${
-          skipped.name
-        }**!`,
-        ephemeral: true,
-      });
-    }
+    int.reply({
+      content: `${this.client.emotes.get("skip")} Skipped **${skipped.name}**!`,
+      ephemeral: true,
+    });
   }
 };
