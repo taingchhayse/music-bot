@@ -55,7 +55,7 @@ module.exports = class PlaylistAdd extends Event {
             }
 
             let emb = new MessageEmbed()
-                .setAuthor(` ${user.username} `, user.displayAvatarURL({dynamic: true}))
+                .setAuthor({ name: user.username }, user.displayAvatarURL({dynamic: true}))
                 .setTitle(`${playlist.name}`)
                 .setURL(`${playlist.url}`)
                 .setThumbnail(`${playlist.songs[0].thumbnail}`)
