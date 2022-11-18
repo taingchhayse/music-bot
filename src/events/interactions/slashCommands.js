@@ -3,35 +3,35 @@ module.exports = class SlashCommands extends Event {
         super({
             name: "slashCommands",
             once: false,
-        });
+        })
     }
 
     async exec(interaction, data) {
-        const cmd = this.client.interactions.get(interaction.commandName);
+        const cmd = this.client.interactions.get(interaction.commandName)
 
-        if (!cmd) return;
+        if (!cmd) return
 
         try {
-            await cmd.exec(interaction, data);
+            await cmd.exec(interaction, data)
         } catch (err) {
             if (interaction.replied || interaction.deferred) {
                 if (!interaction.ephemeral) {
                     await interaction.editReply({
                         content:
                             "Oops! It seems like my devs spilled coffee on the computer :/",
-                    });
+                    })
                 } else {
                     interaction.channel.send({
                         content:
                             "Oops! It seems like my devs spilled coffee on the computer :/",
-                    });
+                    })
                 }
             } else {
                 interaction.reply({
                     ephemeral: true,
                     content:
                         "Oops! It seems like my devs spilled coffee on the computer :/",
-                });
+                })
             }
             return this.client.logger.error(
                 `An error occured while trying to trigger slashCommands\n${
@@ -40,7 +40,7 @@ module.exports = class SlashCommands extends Event {
                 {
                     tag: "Interaction",
                 }
-            );
+            )
         }
     }
-};
+}

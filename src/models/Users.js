@@ -1,4 +1,4 @@
-const {Schema, model} = require("mongoose");
+const { Schema, model } = require("mongoose")
 
 module.exports = model(
     "Users",
@@ -7,6 +7,6 @@ module.exports = model(
             _id: String,
             savedSongs: Array,
         },
-        {versionKey: false}
+        { versionKey: false }
     )
-);
+)
