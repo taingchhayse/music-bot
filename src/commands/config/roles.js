@@ -7,12 +7,12 @@ module.exports = class Roles extends Interaction {
             description: "Manage DJ roles",
             options: [
                 {
-                    type: "1",
+                    type: 1,
                     name: "add",
                     description: "Add a role to the DJ roles list",
                     options: [
                         {
-                            type: "8",
+                            type: 8,
                             name: "role",
                             description: "The role to add",
                             required: true,
@@ -20,12 +20,12 @@ module.exports = class Roles extends Interaction {
                     ],
                 },
                 {
-                    type: "1",
+                    type: 1,
                     name: "remove",
                     description: "Remove a role from the DJ roles list",
                     options: [
                         {
-                            type: "8",
+                            type: 8,
                             name: "role",
                             description: "The role to remove",
                             required: true,
@@ -33,7 +33,7 @@ module.exports = class Roles extends Interaction {
                     ],
                 },
                 {
-                    type: "1",
+                    type: 1,
                     name: "list",
                     description: "List all DJ roles",
                 },

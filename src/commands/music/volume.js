@@ -5,7 +5,7 @@ module.exports = class Volume extends Interaction {
             description: "Changes the volume of the music player",
             options: [
                 {
-                    type: "4",
+                    type: 4,
                     name: "value",
                     description: "The value to set the volume to",
                     required: true,

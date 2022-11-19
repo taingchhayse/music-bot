@@ -5,7 +5,7 @@ module.exports = class SkipTo extends Interaction {
             description: "Skips to a specific track in the queue",
             options: [
                 {
-                    type: "4",
+                    type: 4,
                     name: "song",
                     description: "The position of the track in the queue",
                     required: true,

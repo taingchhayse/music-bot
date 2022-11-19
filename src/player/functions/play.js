@@ -1,6 +1,6 @@
 const { Playlist } = require("discord-music-player")
 
-module.exports = async function asdfasfa(
+module.exports = async function play(
     client,
     int,
     data,
@@ -67,8 +67,9 @@ module.exports = async function asdfasfa(
         if (!pl) return int.channel.send("No playlist found!")
     } else {
         if (force) {
+            console.log('que',queue)
             let song = await queue
-                .play(input, { index: 0, requestedBy: int.member.user })
+                .play(input, { index: 0, requestedBy: int.member.user,request })
                 .catch((_, err) => {
                     if (err) {
                         console.log(err)

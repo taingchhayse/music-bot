@@ -8,7 +8,7 @@ module.exports = class Search extends Interaction {
             description: "Searches for a track in YouTube",
             options: [
                 {
-                    type: "3",
+                    type: 3,
                     name: "input",
                     description: "The track name",
                     required: true,

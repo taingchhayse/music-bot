@@ -7,7 +7,7 @@ module.exports = class Loop extends Interaction {
             description: "Changes the loop mode",
             options: [
                 {
-                    type: "3",
+                    type: 3,
                     name: "mode",
                     description: "Loop mode",
                     required: true,

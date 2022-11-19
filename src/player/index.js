@@ -3,14 +3,25 @@ const play = require("./functions/play")
 const { sync } = require("glob")
 const { resolve } = require("path")
 
-async function player(client) {
+async function player(client, guildId) {
+    if (guildId) {
+        const data = await client.getGuild({
+            _id: interaction.guild.id,
+        })
+    }
     client.player = new Player(client, {
         leaveOnEmpty: false,
         deafenOnJoin: true,
+        ytdlRequestOptions:  {
+            headers: {
+                cookie:  process.env.COOKIE
+            },
+        }
     })
-
+    
     let player = client.player
     client.play = play
+
     const evtFile = await sync(resolve("./src/player/events/*.js"))
     evtFile.forEach((filepath) => {
         const File = require(filepath)

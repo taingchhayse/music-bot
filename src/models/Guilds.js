@@ -8,6 +8,7 @@ module.exports = model(
             djRoles: { type: Array, default: null },
             voiceChannels: { type: Array, default: null },
             announcements: { type: Boolean, default: null },
+            cookie:{type:String,default:null},
         },
         { versionKey: false }
     )

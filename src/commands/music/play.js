@@ -5,13 +5,13 @@ module.exports = class Play extends Interaction {
             description: "Adds a song to the queue",
             options: [
                 {
-                    type: "3",
+                    type: 3,
                     name: "input",
                     description: "The search term or a link",
                     required: true,
                 },
                 {
-                    type: "5",
+                    type: 5,
                     name: "force",
                     description: "Directly play the song",
                     required: false,
@@ -133,7 +133,6 @@ module.exports = class Play extends Interaction {
             source = "youtube"
         }
 
-        console.log("source", source)
         if (isPlaylist) {
             return this.client.play(
                 this.client,

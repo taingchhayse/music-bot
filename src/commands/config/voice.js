@@ -7,12 +7,12 @@ module.exports = class Voice extends Interaction {
             description: "Manage the allowed voice channels",
             options: [
                 {
-                    type: "1",
+                    type: 1,
                     name: "add",
                     description: "Add a voice channel to the allowed list",
                     options: [
                         {
-                            type: "7",
+                            type: 7,
                             name: "channel",
                             description: "The voice channel to add",
                             required: true,
@@ -20,12 +20,12 @@ module.exports = class Voice extends Interaction {
                     ],
                 },
                 {
-                    type: "1",
+                    type: 1,
                     name: "remove",
                     description: "Remove a voice channel from the allowed list",
                     options: [
                         {
-                            type: "7",
+                            type: 7,
                             name: "channel",
                             description: "The voice channel to remove",
                             required: true,
@@ -33,7 +33,7 @@ module.exports = class Voice extends Interaction {
                     ],
                 },
                 {
-                    type: "1",
+                    type: 1,
                     name: "list",
                     description: "List the allowed voice channels",
                 },

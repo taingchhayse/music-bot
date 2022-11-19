@@ -5,7 +5,7 @@ module.exports = class Announce extends Interaction {
             description: "Toggles whether to send the started playing message",
             options: [
                 {
-                    type: "5",
+                    type: 5,
                     name: "mode",
                     description: "Whether to send the started playing message",
                     required: true,

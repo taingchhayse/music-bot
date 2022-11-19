@@ -9,18 +9,18 @@ module.exports = class Fav extends Interaction {
             description: "Manage your favorite songs",
             options: [
                 {
-                    type: "1",
+                    type: 1,
                     name: "add",
                     description:
                         "Add the current playing song to your favorites",
                 },
                 {
-                    type: "1",
+                    type: 1,
                     name: "remove",
                     description: "Remove a song from your favorites",
                     options: [
                         {
-                            type: "3",
+                            type: 3,
                             name: "song",
                             description: "The number of the song",
                             required: true,
@@ -28,17 +28,17 @@ module.exports = class Fav extends Interaction {
                     ],
                 },
                 {
-                    type: "1",
+                    type: 1,
                     name: "list",
                     description: "List your favorite songs",
                 },
                 {
-                    type: "1",
+                    type: 1,
                     name: "play",
                     description: "Play one of your favorite songs",
                     options: [
                         {
-                            type: "4",
+                            type: 4,
                             name: "song",
                             description: "The number of the song",
                             required: true,
