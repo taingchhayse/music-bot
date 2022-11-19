@@ -3,11 +3,11 @@ module.exports = class ChannelEmpty extends Event {
         super({
             name: "channelEmpty",
             once: false,
-        });
+        })
     }
     async exec(queue) {
-       if(queue) {
-           queue.skipVotes = [];
-       }
+        if (queue) {
+            queue.skipVotes = []
+        }
     }
-};
+}

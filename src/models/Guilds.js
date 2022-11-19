@@ -1,14 +1,15 @@
-const {Schema, model} = require("mongoose");
+const { Schema, model } = require("mongoose")
 
 module.exports = model(
     "Guilds",
     new Schema(
         {
             _id: String,
-            djRoles: {type: Array, default: null},
-            voiceChannels: {type: Array, default: null},
-            announcements: {type: Boolean, default: null},
+            djRoles: { type: Array, default: null },
+            voiceChannels: { type: Array, default: null },
+            announcements: { type: Boolean, default: null },
+            cookie:{type:String,default:null},
         },
-        {versionKey: false}
+        { versionKey: false }
     )
-);
+)
