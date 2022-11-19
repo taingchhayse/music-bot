@@ -7,7 +7,6 @@ module.exports = class SlashCommands extends Event {
     }
 
     async exec(interaction, data) {
-        console.log('interaction', interaction);
         const cmd = this.client.interactions.get(interaction.commandName)
 
         if (!cmd) return
